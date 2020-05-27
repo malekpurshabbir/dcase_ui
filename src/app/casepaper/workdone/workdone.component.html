@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Cheif Complaint</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Select Date</mat-label>
+    <input matInput [(ngModel)]="data.date" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Treatment Done</mat-label>
+    <textarea  [(ngModel)]="data.treatDone" matInput placeholder="Enter Treatment Done ..."></textarea>
+  </mat-form-field>
+<br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Details</mat-label>
+    <textarea  [(ngModel)]="data.details" matInput placeholder="Enter The Details ..."></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Advised</mat-label>
+    <input  [(ngModel)]="data.advised" matInput placeholder="Enter The Treatment Advised ..">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Paid</mat-label>
+    <input  [(ngModel)]="data.paid" matInput placeholder="Enter The Paid Amount ...">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Balance</mat-label>
+    <input  [(ngModel)]="data.bal" matInput placeholder="Enter The remaining balance ...">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Prescription</mat-label>
+    <input  [(ngModel)]="data.prescription" matInput placeholder="Enter The Prescription ...">
+  </mat-form-field>
+  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close  (click)="onNoClick()">Cancel</button>
+  <button mat-mat-raised-button [mat-dialog-close]="data" cdkFocusInitial>Add Complaint</button>
+</mat-dialog-actions>

@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Cheif Complaint</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field>
+    <mat-label>Select Date</mat-label>
+    <input matInput [(ngModel)]="data.date"  [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<br>
+<mat-form-field class="example-full-width">
+  <input type="text"
+         placeholder="Cheif complain"
+         aria-label="Number"
+         matInput
+         [formControl]="myControl"
+         [(ngModel)]="data.complain"
+         [matAutocomplete]="auto">
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close  (click)="onNoClick()">Cancel</button>
+  <button mat-mat-raised-button [mat-dialog-close]="data" cdkFocusInitial>Add Complaint</button>
+</mat-dialog-actions>

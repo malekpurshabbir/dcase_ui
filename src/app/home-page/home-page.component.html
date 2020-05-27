@@ -1,0 +1,67 @@
+
+<mat-toolbar color="primary" class="mat-elevation-z8" style="background-color:#333">
+    <mat-icon
+    (click)="onToolbarMenuToggle()"
+    id="toolbarMenu">subject</mat-icon>
+    <span><mat-icon >eco</mat-icon>My Hospital</span>
+    <div class="spacer">  </div>
+    <div class="spacer">  </div>
+          <!-- <a mat-button routerLink="/home/add">Add Patient</a>
+          <a mat-button routerLink="/home/doc">Doctor</a> -->
+          <!-- <a mat-raised-button color='accent' md-direction="left"  style="margin-left:1300px;" routerLink="/">Log Out</a> -->
+  </mat-toolbar>
+  <mat-sidenav-container
+    id="sidenavContainer"
+   fullscreen>
+   
+    <mat-sidenav
+      mode="side"
+      #sidenav
+      id="sidenav"
+      [class.menu-open]="isMenuOpen"
+      [class.menu-close]="!isMenuOpen"
+      opened>
+      
+      <mat-list id="menus">
+        <mat-card>
+          <mat-card-header>
+          <div 
+              mat-card-avatar 
+              class="avatar"><img src="https://cdn2.vectorstock.com/i/1000x1000/17/61/male-avatar-profile-picture-vector-10211761.jpg"
+              class="rounded-circle mr-3" height="50px" width="50px" alt="avatar"></div>
+       
+              <mat-card-title>Recipinst</mat-card-title>
+          
+          </mat-card-header>
+        </mat-card>
+        <mat-list-item>
+          <button routerLink="/home/dash"
+          class="menu-item"
+            mat-flat-button>
+            <mat-icon>Dashboard</mat-icon>
+          Dashboard</button>
+        </mat-list-item>
+  
+        <mat-list-item>
+            <button  routerLink="/home/pat"
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>Patient</mat-icon>
+            Patient</button>
+          </mat-list-item>
+  
+          <mat-list-item>
+              <button  routerLink="/home/appointment"
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>Appointment</mat-icon>
+                Appointment</button>
+            </mat-list-item>
+  
+      </mat-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content style="background-color:#f3f3f3">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
